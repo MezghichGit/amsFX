@@ -2,15 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="485.0" prefWidth="555.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.SampleController">
+<BorderPane prefHeight="519.0" prefWidth="699.0" styleClass="big-yellow" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <top>
       <Label text="Formulaire d'ajout d'un produit" BorderPane.alignment="CENTER">
          <font>
@@ -84,33 +87,95 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="42.0" prefWidth="555.0">
                <children>
-                  <Label text="Label" />
+                  <Label text="Pays de Fabrication">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="90.0" />
+                     </HBox.margin></Label>
+                  <RadioButton fx:id="rbF" mnemonicParsing="false" selected="true" text="France">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="paysFab" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbA" mnemonicParsing="false" text="Autre" toggleGroup="$paysFab">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="555.0">
+               <children>
+                  <Label text=" Date Fabrication">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin></Label>
+                  <DatePicker fx:id="datePicker">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </DatePicker>
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Label" />
+                  <Label text="Remarque">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" />
+                     </HBox.margin></Label>
+                  <TextArea fx:id="txtArea" prefHeight="94.0" prefWidth="264.0">
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                  </TextArea>
                </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" />
-               </children>
-            </HBox>
-            <Button fx:id="btn" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="126.0" text="Ajouter" textAlignment="RIGHT">
-               <font>
-                  <Font size="14.0" />
-               </font>
                <VBox.margin>
-                  <Insets bottom="10.0" left="210.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
-            </Button>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="639.0">
+               <children>
+                  <Button fx:id="btn" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="43.0" prefWidth="126.0" text="Ajouter" textAlignment="RIGHT">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="listeProduits" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="44.0" prefWidth="164.0" text="Liste des Produits">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
          </children>
       </VBox>
    </center>
    <bottom>
-      <Label text="Copyrigth@ISIKA - 2022" BorderPane.alignment="CENTER" />
+      <Label text="Copyrigth@ISIKA - 2022" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin></Label>
    </bottom>
 </BorderPane>

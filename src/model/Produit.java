@@ -9,7 +9,7 @@ public class Produit {
 		return "Produit [libelle=" + libelle + ", prix=" + prix + ", qte=" + qte + ", pays=" + pays
 				+ ", dateFabrication=" + dateFabrication + ", remarque=" + remarque + "]";
 	}
-	public Produit(String libelle, double prix, int qte, boolean pays, LocalDate dateFabrication, String remarque) {
+	public Produit(String libelle, double prix, int qte, String pays, String dateFabrication, String remarque) {
 		this.libelle = libelle;
 		this.prix = prix;
 		this.qte = qte;
@@ -38,16 +38,16 @@ public class Produit {
 	public void setQte(int qte) {
 		this.qte = qte;
 	}
-	public boolean isPays() {
+	public String isPays() {
 		return pays;
 	}
-	public void setPays(boolean pays) {
+	public void setPays(String pays) {
 		this.pays = pays;
 	}
-	public LocalDate getDateFabrication() {
+	public String getDateFabrication() {
 		return dateFabrication;
 	}
-	public void setDateFabrication(LocalDate dateFabrication) {
+	public void setDateFabrication(String dateFabrication) {
 		this.dateFabrication = dateFabrication;
 	}
 	public String getRemarque() {
@@ -59,7 +59,7 @@ public class Produit {
 	private String libelle;
 	private double prix;
 	private int qte;
-	private boolean pays;  //true:france; false: autre
-	private LocalDate dateFabrication;
+	private String pays; 
+	private String dateFabrication;
 	private String remarque;
 }
